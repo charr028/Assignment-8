@@ -27,11 +27,18 @@ jobs:
         uses: r-lib/actions/setup-r-dependencies@v2
         with:
             packages:
-               any::tidyverse
+               any::knitr
+               any::rmarkdown
+               any::jsonlite
+               any::dplyr
+               any::ggplot2
+               any::readr
                any::lubridate
+               any::forcats
+               any::tidyverse
+               any::data.table
+               any::googledrive
                any::gt
-               any::plotly
-               any::flexdashboard
                any::ggthemes
                any::sf
                any::ggmap
@@ -41,14 +48,41 @@ jobs:
                any::osmdata
                any::tigris
                any::tidyr
-               any::dplyr
-               any::forcats
                any::stringr
-               any::gt
                any::purrr
                any::plotly
+               any::flexdashboard
                any::viridis
-               library::htmltools
+               any::htmltools
+               
+       - name: Install packages
+        uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+            packages:
+               any::knitr
+               any::rmarkdown
+               any::jsonlite
+               any::dplyr
+               any::ggplot2
+               any::readr
+               any::lubridate
+               any::forcats
+               any::tidyverse
+               any::data.table
+               any::googledrive
+               any::gt
+               any::ggthemes
+               any::sf
+               any::ggmap
+               any::tmap
+               any::tidycensus
+               any::leaflet
+               any::osmdata
+               any::tigris
+               any::tidyr
+               any::stringr
+               any::purrr
+               any::plotly
 
       - name: Render document
         run: |

@@ -47,13 +47,6 @@ options(dplyr.summarise.inform = FALSE)
 ```
 
 
-```{r data_read, include = FALSE}
-#Read in the nyc airbnb data set
-
-
-
-```
-
 Column {data-width=650}
 -----------------------------------------------------------------------
 
@@ -76,6 +69,9 @@ library(gt)
 library(purrr)
 library(plotly)
 
+#ASSIGNMENT 8: load in census API key
+api_key <- Sys.getenv("MAPS_API_KEY")
+census_api_key(api_key)
 
 #Let's grab the liquor stores and hunting stores
 osm_shop_sf.df <- opq(bbox = "hennepin") %>%

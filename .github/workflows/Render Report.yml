@@ -30,7 +30,6 @@ jobs:
                any::tidyverse
                any::lubridate
                any::gt
-               any:paletteer
                any::plotly
                any::flexdashboard
                any::ggthemes

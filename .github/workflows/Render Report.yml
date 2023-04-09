@@ -10,7 +10,10 @@ jobs:
     
     permissions:
         contents: write
-        
+    
+    env:
+      MAPS_API_KEY: ${{ secrets.MAPS_API_KEY }}
+    
     steps:
       - name: Check out repository
         uses: actions/checkout@v3

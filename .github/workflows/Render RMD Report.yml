@@ -54,6 +54,7 @@ jobs:
                any::viridis
                any::htmltools
                any::paletteer
+               any::rprojroot
                
       - name: Render document
         run: |

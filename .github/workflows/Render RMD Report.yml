@@ -55,6 +55,7 @@ jobs:
                any::htmltools
                any::paletteer
                any::rprojroot
+               any::janitor
                
       - name: Render document
         run: |

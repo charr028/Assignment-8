@@ -53,6 +53,7 @@ jobs:
                any::flexdashboard
                any::viridis
                any::htmltools
+               any::paletteer
                
       - name: Render document
         run: |

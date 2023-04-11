@@ -8,12 +8,11 @@ output:
 ---
 
 ```{r setup, include = FALSE, echo = FALSE}
-library(tidyverse)
-library(lubridate)
-library(gt)
 
 library(plotly)
 library(flexdashboard)
+
+
 
 #Working directory for .RMD
 knitr::opts_knit$set(echo = TRUE,
@@ -85,9 +84,23 @@ shop_points.df <- osm_shop_sf.df$osm_points %>%
   dplyr::select(osm_id, name, shop, opening_hours, phone, website, geometry) %>%
   mutate(shop = str_to_title(shop) %>% as_factor())
 
+#manually creating bounding boxes
+mn.box <- matrix(c(-97.24, 43.50, -89.48, 49.38),
+                     ncol  = 2,
+                     byrow = TRUE)
+colnames(mn.box) <- c("min", "max")
+rownames(mn.box) <- c("x", "y")
+
+hennepin.box <- matrix(c(-93.77, 44.79, -93.18, 45.25),
+                     ncol  = 2,
+                     byrow = TRUE)
+colnames(hennepin.box) <- c("min", "max")
+rownames(hennepin.box) <- c("x", "y")
+
+
 #Get the bounding box and county outline
-mn.box           <- osmdata::getbb("minnesota")
-hennepin.box     <- osmdata::getbb("hennepin")
+#mn.box           <- osmdata::getbb("minnesota")
+#hennepin.box     <- osmdata::getbb("hennepin")
 hennepin.outline <- osmdata::getbb("hennepin", format_out = "polygon")[[1]] %>%
   as_tibble() %>%
   rename(longitude = V1, latitude = V2)

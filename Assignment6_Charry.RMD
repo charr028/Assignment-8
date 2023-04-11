@@ -11,7 +11,7 @@ output:
 library(tidyverse)
 library(lubridate)
 library(gt)
-library(paletteer)
+
 library(plotly)
 library(flexdashboard)
 

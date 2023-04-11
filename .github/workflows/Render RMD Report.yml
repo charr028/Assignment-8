@@ -31,10 +31,7 @@ jobs:
                any::jsonlite
                any::dplyr
                any::ggplot2
-               any::lubridate
                any::forcats
-               any::tidyverse
-               any::gt
                any::ggthemes
                any::sf
                any::ggmap

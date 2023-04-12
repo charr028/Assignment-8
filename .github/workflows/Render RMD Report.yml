@@ -50,6 +50,7 @@ jobs:
                any::paletteer
                any::rprojroot
                any::janitor
+               any::gt
                
       - name: Render document
         run: |
